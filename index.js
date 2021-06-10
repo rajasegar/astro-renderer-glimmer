@@ -1,5 +1,5 @@
 export default {
-  name: '@astrojs/renderer-glimmer', // the renderer name
+  name: 'astro-renderer-glimmer', // the renderer name
   client: './client.js', // relative path to the client entrypoint
   server: './server.js', // relative path to the server entrypoint
   //snowpackPlugin: '@snowpack/plugin-xxx', // optional, the name of a snowpack plugin to inject
