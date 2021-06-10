@@ -1,14 +1,16 @@
 import { renderToString } from '@glimmer/ssr';
 
 export default {
-  // should Component use this renderer?
-  check(Component, props, childHTML) {},
-  // Component => string of static HTML
-  renderToStaticMarkup(Component, props, childHTML) {},
+  check,
+  renderToStaticMarkup,
 };
 
 function check(Component) {
-  return Component.isMyFrameworkComponent;
+  try {
+    const { html } = renderToStaticMarkup(Component, props, childHTML);
+    return Boolean(html);
+  } catch (e) {}
+  return false;
 }
 
 
